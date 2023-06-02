@@ -15,7 +15,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(/Images/bg3.webp);
+            background-image: url(Images/bg3.webp);
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -61,9 +61,11 @@
 
 <body>
     <section id="header">
-        <a href="#main"><img src="/Images/Logo.png" alt="" id="logoImg"></a>
+        <a href="#main"><img src="Images/Logo.png" alt="" id="logoImg"></a>
         <div class="links">
-            <ul>
+            <i class="fa-solid fa-bars fa-lg" style="color: #000000;" id="bars"></i>
+            <ul id="navbar">
+                <li><i class="fa-solid fa-xmark fa-lg" style="color: #000000;" id="close"></i></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
@@ -90,6 +92,21 @@
         </div>
     </section>
     <script src="https://kit.fontawesome.com/84df3e5878.js" crossorigin="anonymous"></script>
+    <script>
+        let bars = document.querySelector("#bars");
+        let close = document.querySelector("#close");
+        let navbar = document.querySelector("#navbar");
+        if (bars) {
+            bars.addEventListener("click", () => {
+                navbar.classList.add("show");
+            });
+        }
+        if (close) {
+            close.addEventListener("click", () => {
+                navbar.classList.remove("show");
+            });
+        }
+    </script>
 </body>
 
 </html>
