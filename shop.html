@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AB Garments</title>
+    <title>AB Garments - Shop</title>
     <link rel="stylesheet" href="index.css">
     <style>
+        /* Styling banner section  */
         #banner {
             margin: 20px 0px;
             width: 100%;
@@ -15,32 +16,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(Images/bg2.avif);
+            background-image: url(Images/bg.webp);
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
         }
 
-        #whoweare {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            height: 120vh;
+        #featuredProducts {
+            height: auto;
         }
 
-        #whoweare .imgDiv {
-            width: 40%;
-            height: 100%;
+        .productsDiv {
+            width: auto;
+            height: auto;
             display: flex;
-            align-items: center;
+            align-content: center;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        #whoweare .desc {
-            width: 55%;
-            height: 100%;
-            padding-right: 20px;
+        .message {
+            font-size: 0.8rem;
+            padding: 10px;
         }
     </style>
 </head>
@@ -53,47 +50,78 @@
             <ul id="navbar">
                 <li><i class="fa-solid fa-xmark fa-lg" style="color: #000000;" id="close"></i></li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </section>
     <section id="banner">
-        <h2 style="font-size: 1.9rem;color: white;">#KnowUs</h2>
+        <h2 style="font-size: 1.9rem;color: white;">#StayHome</h2>
     </section>
-    <section id="whoweare">
-        <div class="imgDiv">
-            <img src="Images/who we are.webp" alt="">
-        </div>
-        <div class="desc">
-            <h1 style="font-size: 2.5rem;">Who We Are?</h1>
-            <p>We are a new and small e-commerce website that takes pride in offering a carefully curated selection of
-                high-quality products at reasonable prices. While we may be smaller in size, we make up for it with our
-                focus on quality and value. We believe in the power of offering a limited but exceptional range of
-                products, ensuring that each item meets our stringent quality standards.
-                <br><br>
-                Our small size allows us to pay meticulous attention to detail and personally handpick each product in
-                our collection. We believe in quality over quantity.
-                <br><br>
-                In addition to our dedication to quality, we understand the importance of affordability. We believe that
-                everyone should have access to high-quality products without breaking the bank. That's why we work
-                closely with our suppliers to negotiate competitive prices, allowing us to offer our customers
-                reasonable and competitive pricing across our range.
-                <br><br>
-                As a new and small e-commerce website, we are committed to providing exceptional customer service. We
-                believe in building strong relationships with our customers and ensuring their satisfaction. Our team is
-                always ready to assist with any inquiries.
-                <br><br>
-                In summary, we are a new and small e-commerce website that prioritizes offering a limited yet
-                high-quality product selection at reasonable prices. With our dedication to quality, value, and
-                exceptional customer service, we strive to provide a memorable and enjoyable shopping experience for all
-                our customers.
-            </p>
-        </div>
+    <section id="featuredProducts">
+        <div class="productsDiv"></div>
     </section>
     <script src="https://kit.fontawesome.com/84df3e5878.js" crossorigin="anonymous"></script>
+    </script>
     <script>
+        let productsDiv = document.querySelector(".productsDiv");
+        let allProducts = [
+            { name: "Lehanga 100% Cotton 637", price: "₹1299", brand: "adidas", stars: 3 },
+            { name: "Lehanga 100% Cotton 923", price: "₹299", brand: "adidas", stars: 4 },
+            { name: "Lehanga 100% Cotton 023", price: "₹3299", brand: "adidas", stars: 4 },
+            { name: "Lehanga 100% Cotton 013", price: "₹4299", brand: "adidas", stars: 4 },
+            { name: "Lehanga 100% Cotton 003", price: "₹2299", brand: "adidas", stars: 3 },
+            { name: "Lehanga 100% Cotton 362", price: "₹1399", brand: "adidas", stars: 4 },
+            { name: "Lehanga 100% Cotton 178", price: "₹1499", brand: "adidas", stars: 5 },
+            { name: "Lehanga 100% Cotton 327", price: "₹1599", brand: "adidas", stars: 3 },
+            { name: "Lehanga 100% Cotton 282", price: "₹1799", brand: "adidas", stars: 4 },
+            { name: "Lehanga 100% Cotton 233", price: "₹1899", brand: "adidas", stars: 3 },
+            { name: "Lehanga 100% Cotton 281", price: "₹499", brand: "adidas", stars: 5 },
+            { name: "Lehanga 100% Cotton 733", price: "₹599", brand: "adidas", stars: 4 }
+        ];
+        let html = "";
+        let starHtml = "";
+        const renderStars = (value) => {
+            if (value == 1) {
+                starHtml = `<i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i>`;
+            }
+            if (value == 2) {
+                starHtml = `<i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i>`;
+            }
+            if (value == 3) {
+                starHtml = `<i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i>`;
+            }
+            if (value == 4) {
+                starHtml = `<i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i>`;
+            }
+            if (value == 5) {
+                starHtml = `<i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i><i class="fa-solid fa-star" style="color: rgb(242, 255, 61);"></i>`;
+            }
+        }
+        allProducts.forEach(function (element, index) {
+            renderStars(element.stars)
+            html = `<div class="feaProducts">
+                <img src="Images/lehanga.jpg" class="card-img-top" alt="...">
+                <div class="details">
+                    <h6 class="card-title proBrand">${element.brand}</h6>
+                    <div>
+                        <h6 class="card-title proName">${element.name}</h6></div>
+                    <div class="stars">
+                        ${starHtml}
+                    </div>
+                    <div>
+                        <span class="price">${element.price}</span>
+                    </div>
+                    <p class="message"><b>To Order:</b> Message on WhatSapp <i class="fa-brands fa-whatsapp fa-lg"
+                            style="color: #088178;"></i>1234567891
+                        with product name, address and phone
+                        number.
+                    </p>
+                </div>
+            </div>`
+            productsDiv.innerHTML += html;
+        });
         let bars = document.querySelector("#bars");
         let close = document.querySelector("#close");
         let navbar = document.querySelector("#navbar");
@@ -107,6 +135,7 @@
                 navbar.classList.remove("show");
             });
         }
+        // <h6 class="card-title proName">${element.name}</h6>
     </script>
 </body>
 
