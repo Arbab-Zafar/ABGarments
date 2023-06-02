@@ -124,6 +124,7 @@ h1,
     padding: 3px 5px;
     border-radius: 7px;
     margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
 #main #mainText span {
@@ -198,6 +199,11 @@ h1,
 }
 
 /* Styling Featured Products as well as New Arrivals Section  */
+.feaProDesc {
+    font-size: 0.87rem;
+    color: grey;
+}
+
 .message {
     font-size: 0.8rem;
     padding: 10px;
@@ -308,9 +314,13 @@ h1,
     display: none;
 }
 
+.imgDiv img {
+    width: 100%;
+}
+
 /* Media Query */
 
-@media only screen and (max-width:800px) {
+@media screen and (max-width:700px) {
 
     #bars {
         display: initial;
@@ -323,15 +333,17 @@ h1,
     #header .links #navbar {
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
         z-index: 74827;
         height: 100vh;
+        width: 35%;
         position: fixed;
         right: -300px;
         top: 0;
         background-color: white;
         transition: 0.3s ease;
+        padding: 0px;
     }
 
     #header .links #navbar.show {
@@ -340,7 +352,7 @@ h1,
     }
 
     #header .links ul li {
-        padding: 15px 20px 15px 0px;
+        padding: 15px 0px;
     }
 
     #header ul li a.active::after,
@@ -355,7 +367,7 @@ h1,
     }
 
     #main {
-        height: 40vh;
+        height: 50vh;
     }
 
     #main #mainText {
@@ -420,5 +432,167 @@ h1,
     .productsDiv .feaProducts {
         width: 80%;
         margin: 4%;
+    }
+
+    #whoweare {
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #whoweare .imgDiv {
+        display: none !important;
+    }
+
+    #whoweare .desc {
+        width: 100% !important;
+    }
+
+    #whoweare .desc h1,
+    p {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:350px) and (max-width:450px) {
+    #main #mainImgDiv {
+        width: 40%;
+        background-position: top 0px right -99px;
+    }
+
+    #header img {
+        width: 170px;
+    }
+
+    #allFeatures .feaCard h5 {
+        font-size: 0.85rem;
+    }
+
+    #main #mainText button {
+        font-size: 0.9rem;
+    }
+
+    #main #mainText h3 {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width:200px) and (max-width:350px) {
+    #main #mainImgDiv {
+        width: 40%;
+        background-position: top 0px right -99px;
+    }
+
+    #header img {
+        width: 170px;
+    }
+
+    #allFeatures .feaCard h5 {
+        font-size: 0.69rem;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    #main #mainImgDiv {
+        width: 40%;
+        background-position: top 0px right -80px;
+    }
+}
+
+/* For Tablets */
+@media only screen and (min-width:700px) and (max-width:900px) {
+    #header img {
+        width: 250px;
+    }
+
+    #header #navbar li a {
+        font-size: 1.4rem;
+    }
+
+    #main {
+        height: 75vh;
+    }
+
+    #main #mainImgDiv {
+        width: 45%;
+        background-position: top -6px right -233px;
+    }
+
+    #main #mainText h4 {
+        font-size: 1.7rem;
+    }
+
+    #main #mainText h2 {
+        font-size: 3.5rem;
+    }
+
+    #main #mainText h1 {
+        font-size: 4rem;
+    }
+
+    #main #mainText h3 {
+        font-size: 2rem;
+    }
+
+    #main #mainText button {
+        padding: 15px 45px 15px 45px;
+        margin-top: 34px;
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+
+    #main #mainText {
+        padding-left: 50px;
+    }
+
+    #features {
+        height: auto;
+    }
+
+    #features h2,
+    #featuredProducts h2,
+    #newArrivals h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    #allFeatures .feaCard {
+        width: 43.5%;
+        height: 30vh;
+        margin-bottom: 30px;
+    }
+
+    #allFeatures .feaCard h5 {
+        font-size: 1.9rem;
+    }
+
+    .feaProDesc {
+        font-size: 1.6rem;
+    }
+
+    .productsDiv .feaProducts {
+        width: 46%;
+    }
+
+    .productsDiv .feaProducts .details .proName {
+        font-size: 1.4rem;
+    }
+
+    .productsDiv .feaProducts .details .proBrand {
+        font-size: 1rem;
+    }
+
+    .productsDiv .feaProducts .details .price {
+        font-size: 1.3rem;
+    }
+
+    .message {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    #whoweare {
+        height: auto;
     }
 }
