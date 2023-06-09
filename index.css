@@ -86,7 +86,7 @@
 #main #mainImgDiv {
     width: 35%;
     height: 100%;
-    background-image: url(/Images/model.png);
+    background-image: url(Images/model.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top 0 right 0;
@@ -132,7 +132,7 @@ h1,
 }
 
 #main #mainText button {
-    background-image: url(/Images/btn.png);
+    background-image: url(Images/btn.png);
     background-repeat: no-repeat;
     border: 0;
     border-radius: 10px;
