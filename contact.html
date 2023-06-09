@@ -23,7 +23,7 @@
 
         #contact {
             width: 100%;
-            height: 57vh;
+            /* height: 57vh; */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,9 +52,20 @@
             align-items: center;
             flex-direction: column;
         }
-        #contact .right iframe{
+
+        #contact .right iframe {
+            width: 90%;
+            height: 50vh;
+        }
+
+        @media only screen and (max-width:700px) {
+            .left p{
+                text-align: start;
+            }
+            #contact .right iframe {
             width: 90%;
             height: 100%;
+        }
         }
     </style>
 </head>
@@ -88,7 +99,10 @@
             <p><i class="fa-regular fa-clock" style="color: #000000;"></i> Monday to Thursday 10:00am to 6:00pm</p>
         </div>
         <div class="right">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d337.03008048073116!2d85.00107993050835!3d24.79677317662579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1685615993350!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d337.03008048073116!2d85.00107993050835!3d24.79677317662579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1685615993350!5m2!1sen!2sin"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
     <script src="https://kit.fontawesome.com/84df3e5878.js" crossorigin="anonymous"></script>
@@ -106,6 +120,30 @@
                 navbar.classList.remove("show");
             });
         }
+
+        function myFunction(x) {
+            if (x.matches) { // If media query matches
+                document.querySelector("#contact").innerHTML = ` <div class="left">
+            <h5>Get-In-Touch</h5>
+            <h1>Visit our location or contact us today</h1>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d337.03008048073116!2d85.00107993050835!3d24.79677317662579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1685615993350!5m2!1sen!2sin"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p><i class="fa-solid fa-map-location-dot" style="color: #000000;"></i> Khan Manzil, House No.3, Bari Road,
+                Maroof Ganj,
+                Gaya, Bihar</p>
+            <p><i class="fa-regular fa-envelope" style="color: #000000;"></i> gazali@gmail.com</p>
+            <p><i class="fa-regular fa-message" style="color: #000000;"></i> 1234567891</p>
+            <p><i class="fa-regular fa-clock" style="color: #000000;"></i> Monday to Thursday 10:00am to 6:00pm</p>
+        </div>`
+                document.querySelector(".left").style.width = "100%"
+            }
+        }
+
+        var x = window.matchMedia("(max-width: 700px)")
+        myFunction(x) // Call listener function at run time
+        x.addListener(myFunction) // Attach listener function on state changes
     </script>
 </body>
 
