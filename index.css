@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Anuphan&family=Comme&family=Lato&family=Lobster&family=Montserrat&family=Noto+Sans:ital,wght@1,300&family=Open+Sans&family=PT+Sans&family=Poppins:wght@300;400&family=Raleway&family=Roboto:wght@300;400;700&display=swap');
 
 /* Global Css */
+.loaderMain {
+    width: 98vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    border: 15px solid white;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    border-top: 15px solid #088178;
+    border-bottom: 15px solid #088178;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 * {
     margin: 0px;
@@ -196,6 +223,7 @@ h1,
     padding: 2% 5%;
     border-radius: 5px;
     font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 /* Styling Featured Products as well as New Arrivals Section  */
@@ -417,6 +445,7 @@ h1,
     #allFeatures .feaCard {
         width: 44.5%;
         height: 25vh;
+        margin-bottom: 15px;
     }
 
     #allFeatures .feaCard h5 {
@@ -564,7 +593,7 @@ h1,
     }
 
     #allFeatures .feaCard h5 {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
     }
 
     .feaProDesc {
