@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AB Garments</title>
-        <link rel="icon" type="image/x-icon" href="Images/ABG Favicon.ico">
-    
     <link rel="stylesheet" href="index.css">
     <style>
         #banner {
@@ -47,7 +45,10 @@
     </style>
 </head>
 
-<body>
+<body onload="load()">
+    <div class="loaderMain">
+        <div class="loader"></div>
+    </div>
     <section id="header">
         <a href="#main"><img src="Images/Logo.png" alt="" id="logoImg"></a>
         <div class="links">
@@ -94,6 +95,7 @@
             </p>
         </div>
     </section>
+    <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/84df3e5878.js" crossorigin="anonymous"></script>
     <script>
         let bars = document.querySelector("#bars");
